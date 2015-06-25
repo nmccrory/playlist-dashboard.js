@@ -55,3 +55,35 @@ app.post('/songs', function(req, res){
 app.get('/songs/new', function(req, res){
 	res.render('create');
 })
+
+app.get('/songs/:id', function(req, res){
+	Song.findOne({_id: req.params.id}, function(err, song){
+		res.render('songpage', {song: song});
+	})
+})
+app.get('/songs/:id/edit', function(req, res){
+	Song.findOne({_id: req.params.id}, function(err, song){
+		res.render('edit', {song: song});
+	})
+})
+app.post('/songs/:id', function(req, res){
+	Song.update({_id: req.params.id}, {title: req.body.title, artist: req.body.artist, album: req.body.album, genre: req.body.genre}, function(err, song){
+		if(err){
+			console.log('error updating song');
+		}else{
+			console.log('song successfully updated');
+			res.redirect('/songs/'+req.params.id);
+		}
+	})
+})
+
+app.get('/songs/:id/destroy', function(req, res){
+	Song.remove({_id: req.params.id}, function(err, song){
+		if(err){
+			console.log('song has not been deleted');
+		}else{
+			console.log('song deleted successfully');
+			res.redirect('/');
+		}
+	})
+})

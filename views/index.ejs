@@ -22,7 +22,7 @@
 						<tbody>
 							<% for(x in songs){ %>
 								<tr>
-									<td><%=songs[x].title%></td>
+									<td><a href=<%='/songs/'+songs[x]._id%>><%=songs[x].title%></a></td>
 									<td><%=songs[x].artist%></td>
 									<td><%=songs[x].album%></td>
 									<td><%=songs[x].genre%></td>
