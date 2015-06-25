@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<title>New Song</title>
+		<link rel="stylesheet" href="/css/materialize.css">
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col s8">
+					<form action="/songs" method='post'>
+						<div class="input-field">
+							<h5>Song title</h5>
+							<input type="text" name='title'>
+						</div>
+						<div class="input-field">
+							<h5>Artist</h5>
+							<input type="text" name='artist'>
+						</div>
+						<div class="input-field">
+							<h5>Album</h5>
+							<input type="text" name='album'>
+						</div>
+						<div class="input-field">
+							<h5>Genre</h5>
+							<input type="text" name='genre'>
+						</div>
+						<div class="section">
+							<button type='submit'>Add song</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

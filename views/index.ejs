@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<title>Playlist Dashboard</title>
+		<link rel="stylesheet" href="/css/materialize.css">
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col s6">
+					<h2>Playlist Dashboard</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col s12">
+					<table class='striped'>
+						<thead>
+							<th>Song title</th>
+							<th>Artist</th>
+							<th>Album</th>
+							<th>Genre</th>
+						</thead>
+						<tbody>
+							<% for(x in songs){ %>
+								<tr>
+									<td><%=songs[x].title%></td>
+									<td><%=songs[x].artist%></td>
+									<td><%=songs[x].album%></td>
+									<td><%=songs[x].genre%></td>
+								</tr>
+							<% } %>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col s3">
+					<a href="/songs/new">Add a song</a>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
